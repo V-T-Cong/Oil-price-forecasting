@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Oil Price Prediction</h1>
+        <form id="prediction-form">
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" required>
+            <label for="open">Open:</label>
+            <input type="text" id="open" name="open" required>
+            <label for="high">High:</label>
+            <input type="text" id="high" name="high" required>
+            <label for="low">Low:</label>
+            <input type="text" id="low" name="low" required>
+            <label for="volume">Vol.:</label>
+            <input type="text" id="volume" name="volume" required>
+            <label for="change">Change %:</label>
+            <input type="text" id="change" name="change" required>
+            <label for="select-option">Select a Model:</label>
+            <select id="select-option" name="select-option">
+                <option value="RNN">RNN</option>
+                <option value="DNN">DNN</option>
+                <option value="LSTM">LSTM</option>
+                <option value="GRUs">GRUs</option>
+                <option value="MERGE">MERGE</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Predict">
+        </form>
+        <p id="error-message"></p>
+        <p id="success-message"></p>
+    </div>
+</body>
+</html>
